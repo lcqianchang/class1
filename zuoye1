@@ -1,0 +1,142 @@
+package si;
+
+
+import java.util.Scanner;
+public class yunsuan {
+
+	 public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("请输入出题数量：");
+		Scanner num=new Scanner(System.in);
+		int n = num.nextInt();
+		
+
+		
+		//这个数组是用来存放已经出好的题
+        String timu[]=new String [n];
+		for(int i=0;i<n;i++)
+		{  
+			int z1,z2;//用来判断是整数还是真分数
+			int x1=(int)(Math.random()*100);//分子
+			int y1=(int)(Math.random()*100+1);//分母
+			z1=x1/y1;
+			
+			int x2=(int)(Math.random()*100);//分子
+			int y2=(int)(Math.random()*100+1);//分母
+			z2=x2/y2;			
+		    if((x1%y1==0)&&(x2%y2==0))
+		    {
+		    	int a=(int)(Math.random() * 4);//用来判断四则运算的符号
+		    	String q1="";
+		    	if(a==3&&z2==0) i--;
+		    	else{
+		    if(a==0) q1=z1+"+"+z2+"=";
+		    if(a==1) q1=z1+"-"+z2+"=";
+		
+		    if(a==2) q1=z1+"*"+z2+"=";
+		
+		    if(a==3&&(z2!=0)) q1=z1+"/"+z2+"=";
+		    int j;
+		    for(j=0;j<i;j++)
+		    	{
+		    	   if(q1.equals(timu[j]))
+		    	   {
+		    		   i--;
+		    		   break;
+		    	   }
+		    	}
+		    if(j==i){
+		    	timu[i]=q1;
+		    
+		    	System.out.println(q1);}
+		    }
+		    	}
+		    else if((x1<y1)&&(x2%y2==0)&&x1!=0)
+		    {
+		    	String q1="";
+		    	int a=(int)(Math.random() * 4);//用来判断四则运算的符号
+		    	if(x2==0&&a==3) i--;
+		    	else{
+            if(a==0) q1=x1+"/"+y1+"+"+z2+"=";
+		
+		    if(a==1) q1=x1+"/"+y1+"-"+z2+"=";
+		
+		    if(a==2) q1="("+x1+"/"+y1+")"+"*"+z2+"=";
+		    
+		    if(a==3&&(z2!=0)) q1="("+x1+"/"+y1+")"+"/"+z2+"=";
+		    int j;
+		    for(j=0;j<i;j++)
+		    	{
+		    	   if(q1.equals(timu[j]))
+		    	   {
+		    		   i--;
+		    		   break;
+		    	   }
+		    	}
+		    if(j==i){
+		    	timu[i]=q1;
+		    
+		    	System.out.println(q1);}
+		    }
+		    }
+		    else if((x1%y1==0)&&(x2<y2))
+		    {
+		    	String q1="";
+		    	int a=(int)(Math.random() * 4);//用来判断四则运算的符号
+		    	if(x2==0&&a==3) i--;
+		    	else{
+            if(a==0) q1=z1+"+"+x2+"/"+y2+"=";
+		
+		    if(a==1) q1=z1+"-"+x2+"/"+y2+"=";
+		
+		    if(a==2) q1=z1+"*"+"("+x2+"/"+y2+")"+"=";
+		    
+		    if(a==3&&(z2!=0)) q1=z1+"/"+"("+x2+"/"+y2+")"+"=";
+		    int j;
+		    for(j=0;j<i;j++)
+		    	{
+		    	   if(q1.equals(timu[j]))
+		    	   {
+		    		   i--;
+		    		   break;
+		    	   }
+		    	}
+		    if(j==i){
+		    	timu[i]=q1;
+		    
+		    	System.out.println(q1);}
+		    }
+		    }
+		    else if((x1<y1)&&(x2<y2)&&x1!=0)
+		    {
+		    	String q1="";
+		    	int a=(int)(Math.random() * 4);//用来判断四则运算的符号
+		    	if(x2==0&&a==3) i--;
+		    	else{
+            if(a==0) q1=x1+"/"+y1+"+"+x2+"/"+y2+"=";
+		
+		    if(a==1) q1=x1+"/"+y1+"-"+x2+"/"+y2+"=";
+		
+		    if(a==2) q1="("+x1+"/"+y1+")"+"*"+"("+x2+"/"+y2+")"+"=";
+		    
+		    if(a==3&&(z2!=0)) q1="("+x1+"/"+y1+")"+"/"+"("+x2+"/"+y2+")"+"=";
+		    int j;
+		    for(j=0;j<i;j++)
+		    	{
+		    	   if(q1.equals(timu[j]))
+		    	   {
+		    		   i--;
+		    		   break;
+		    	   }
+		    	}
+		    if(j==i){
+		    	timu[i]=q1;
+		    
+		    	System.out.println(q1);}
+		    }		    
+		    }
+		    else i--;
+		}
+	}
+
+}
